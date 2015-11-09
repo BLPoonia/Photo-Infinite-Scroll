@@ -14,13 +14,13 @@
 @implementation FullScreenCollectionViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
     
+    // Pinch Zoom
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
     self.pinchRecognizer = pinch;
     self.pinchRecognizer.delegate = self;
     
-    //Zooming for images
+    // DoubleTap Zoom
     UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
     self.doubleTapRecognizer = doubleTap;
     self.doubleTapRecognizer.delegate = self;
